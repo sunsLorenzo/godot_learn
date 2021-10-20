@@ -215,7 +215,7 @@ __meta__ = {
 position = Vector2( 0, -9.12436 )
 texture = ExtResource( 2 )
 hframes = 60
-frame = 5
+frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.124363 )
