@@ -16,12 +16,8 @@ onready var  animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
-
-
 func _ready():
 	animationTree.active = true
-
-
 
 func _physics_process(delta):
 	match state:
@@ -42,7 +38,6 @@ func move_state(delta):
 		animationTree.set("parameters/Idel/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector) 
-		
 		
 		animationState.travel("Run")
 		velocity = velocity.move_toward(input_vector*MAX_SPEED, ACCELLERATION)
