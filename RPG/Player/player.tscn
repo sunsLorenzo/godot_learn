@@ -604,6 +604,7 @@ position = Vector2( 0, 0.555544 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 1 )
+MAX_SPEED = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -9.12436 )

@@ -64,7 +64,7 @@ func attack_state(delta):
 	animationState.travel("Attack")
 	
 func roll_state(delta):
-	velocity = MAX_SPEED * roll_vector * 1.5
+	velocity = MAX_SPEED * roll_vector * 1.25
 	animationState.travel("Roll")
 	move(velocity)
 	
