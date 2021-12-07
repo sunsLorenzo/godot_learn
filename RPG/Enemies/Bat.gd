@@ -17,6 +17,7 @@ var knockback = Vector2.ZERO
 onready var sprite = $AnimatedBatSprite
 onready var  stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
+onready var hurtbox = $Hurtbox
 
 func _ready():
 	print(stats.max_health)
@@ -57,15 +58,16 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 #	if stats.health <= 0:
 #		queue_free()
+	hurtbox.create_hit_effect()
 	knockback = area.knockback_vector * 150  # area 是进入该物体的area (Player 的Hitbox ) 
-
+	
+	
 func create_death_animation():
-	pass
-
 	var enemyDeathEffect = EnemyEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
 	queue_free()
+
 func _on_Stats_no_health():
 	create_death_animation()
 	queue_free()
