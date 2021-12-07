@@ -59,6 +59,7 @@ func move_state(delta):
 		state = ATTACK
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+#		PlayerStats.max_health += 1
 		
 func attack_state(delta):
 	velocity = Vector2.ZERO
