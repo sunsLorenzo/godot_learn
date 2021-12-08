@@ -18,6 +18,7 @@ onready var sprite = $AnimatedBatSprite
 onready var  stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
+onready var softCollision = $SoftCollision
 
 func _ready():
 	print(stats.max_health)
@@ -32,10 +33,10 @@ func _physics_process(delta):
 			velocity =  velocity.move_toward(Vector2.ZERO, FRICTION*delta)
 			seek_player()
 		WANDER:
-			velocity.x = rand_range(-1,1)
-			velocity.y = rand_range(-1,1)
-			velocity = velocity.normalized()*MAX_SPPED*0.3
-#			velocity = velocity.move_toward(velocity*MAX_SPPED, ACCELARATION*delta)
+#			velocity.x = rand_range(-1,1)
+#			velocity.y = rand_range(-1,1)
+#			velocity = velocity.normalized()*MAX_SPPED*0.3
+# #			velocity = velocity.move_toward(velocity*MAX_SPPED, ACCELARATION*delta)
 			state=IDLE
 		CHASE:
 			var player = playerDetectionZone.player
@@ -45,7 +46,9 @@ func _physics_process(delta):
 			else:
 				state=WANDER
 			sprite.flip_h = velocity.x<0
-			
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector()*delta*MAX_SPPED*3
+		 
 	velocity = move_and_slide(velocity)
 			
 func seek_player():

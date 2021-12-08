@@ -586,7 +586,7 @@ position = Vector2( 32.174, 35.7665 )
 position = Vector2( 130.214, 48.051 )
 
 [node name="Tree2" parent="ysort/YSortTree" instance=ExtResource( 9 )]
-position = Vector2( 57.9029, 76.0738 )
+position = Vector2( 66.2423, 76.3571 )
 
 [node name="Tree3" parent="ysort/YSortTree" instance=ExtResource( 9 )]
 position = Vector2( 228.19, 114.047 )
@@ -598,7 +598,7 @@ position = Vector2( 203.656, 64.7154 )
 position = Vector2( 153.245, 96.4012 )
 
 [node name="Bat3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 63.0935, 71.1587 )
+position = Vector2( 23.29, 98.047 )
 
 [node name="HealthUI" parent="." instance=ExtResource( 8 )]
 
