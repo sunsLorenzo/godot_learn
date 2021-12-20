@@ -18,6 +18,7 @@ onready var sprite = $AnimatedBatSprite
 onready var  stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
+onready var hitbox = $Hitbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
@@ -99,3 +100,5 @@ func create_death_animation():
 func _on_Stats_no_health():
 	create_death_animation()
 	queue_free()
+
+

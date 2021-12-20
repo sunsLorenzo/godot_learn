@@ -86,7 +86,11 @@ func attack_animation_finished():
 
 
 func _on_Hurtbox_area_entered(area):
-	hurtbox.start_invincibility(0.6)
+#	if typeof(area) ==0:
+#		area = area[0]
+#	hurtbox.collisionShape.set_deferred("disabled", true)
+	print (typeof(area))
+	hurtbox.start_invincibility(1)
 	hurtbox.create_hit_effect()
 	var playerHurtAudio = PlayerHurtAudio.instance()
 	get_tree().current_scene.add_child(playerHurtAudio)
@@ -96,8 +100,10 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Hurtbox_invincibility_started():
+	hurtbox.collisionShape.set_deferred("disabled", true)
 	blinkAnimationPlayer.play("Start")
-
+	
 
 func _on_Hurtbox_invincibility_ended():
+	hurtbox.collisionShape.disabled = false
 	blinkAnimationPlayer.play("End")

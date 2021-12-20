@@ -58,6 +58,7 @@ script = ExtResource( 4 )
 [node name="AnimatedBatSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "Fly"
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -85,10 +86,10 @@ max_health = 2
 visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+visible = false
 modulate = Color( 0.27451, 0.227451, 0.227451, 1 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 7 )]
-visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
@@ -96,6 +97,7 @@ position = Vector2( 0, -14.0438 )
 shape = SubResource( 9 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
 collision_layer = 32
 collision_mask = 32
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/bush.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -535,10 +536,14 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 112, 64 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 82.1589, 25.1754 )
-current = true
-smoothing_enabled = true
+
+[node name="bottumRight" parent="Camera2D/limits" index="0"]
+position = Vector2( 492, 297 )
+
+[node name="topLeft" parent="Camera2D/limits" index="1"]
+position = Vector2( -163, -98 )
 
 [node name="ysort" type="YSort" parent="."]
 
@@ -611,3 +616,9 @@ position = Vector2( 23.29, 98.047 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+margin_left = 0.375763
+margin_top = 0.334299
+margin_right = 60.3758
+margin_bottom = 14.3343
+
+[editable path="Camera2D"]
