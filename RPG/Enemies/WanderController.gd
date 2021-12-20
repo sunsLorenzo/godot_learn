@@ -7,7 +7,7 @@ onready var timer = $Timer
 
 func _on_Timer_timeout():
 	update_target_position()
-	print(target_position)
+#	print(target_position)
 
 
 func update_target_position():
@@ -18,7 +18,7 @@ func update_target_position():
 
 func set_wander_timer(duration):
 	timer.start(duration)
-	print('set', duration)
+#	print('set', duration)
 
 
 func get_time_left():

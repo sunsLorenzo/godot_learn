@@ -24,8 +24,8 @@ onready var wanderController = $WanderController
 
 func _ready():
 	randomize()
-	print(stats.max_health)
-	print(stats.health)
+#	print(stats.max_health)
+#	print(stats.health)
 	update_wander()
 
 func _physics_process(delta):
